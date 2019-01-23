@@ -14,8 +14,9 @@
 
 REGISTRY         := eu.gcr.io/gardener-project
 IMAGE_REPOSITORY := $(REGISTRY)/gardener-extension-os-coreos
-IMAGE_TAG        := $(shell cat ../../VERSION)
 WORKDIR          := $(shell pwd)
+REPO_ROOT        := $(WORKDIR)/../..
+IMAGE_TAG        := $(shell cat $(REPO_ROOT)/VERSION)
 PUSH_LATEST      := true
 LD_FLAGS         := "-w -X github.com/gardener/gardener-extensions/gardener-extension-os-coreos/pkg/version.Version=$(IMAGE_TAG)"
 
@@ -75,6 +76,10 @@ clean:
 	@rm -rf bin/
 	@rm -f *linux-amd64
 	@rm -f *darwin-amd64
+
+.PHONY: examples
+examples:
+	@${REPO_ROOT}/hack/generate-controllerregistration os-coreos OperatingSystemConfig coreos ${WORKDIR}/charts/os-coreos ${WORKDIR}/example/controllerregistration.yaml
 
 #####################################################################
 # Rules for verification, formatting, linting, testing and cleaning #

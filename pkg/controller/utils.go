@@ -16,6 +16,7 @@ package controller
 
 import (
 	"context"
+	"sigs.k8s.io/controller-runtime/pkg/runtime/signals"
 
 	controllererror "github.com/gardener/gardener-extensions/pkg/controller/error"
 	extensionsv1alpha1 "github.com/gardener/gardener/pkg/apis/extensions/v1alpha1"
@@ -96,4 +97,8 @@ func CreateOrUpdate(ctx context.Context, c client.Client, obj runtime.Object, tr
 		return err
 	}
 	return c.Update(ctx, obj)
+}
+
+func SetupSignalHandlerContext() context.Context {
+	return ContextFromStopChannel(signals.SetupSignalHandler())
 }

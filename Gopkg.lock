@@ -18,15 +18,14 @@
   version = "v1.1.1"
 
 [[projects]]
-  digest = "1:6370d59412464f3244dcdae15c0ccc33c2829fc7c61c47743987d200169565f3"
+  digest = "1:b53e8cf573a25ad0780d2ba634e7b7b19ab0a6aa081ff6d48be2ff0c724493aa"
   name = "github.com/gardener/gardener"
   packages = [
     "pkg/apis/extensions",
     "pkg/apis/extensions/v1alpha1",
-    "pkg/client/extensions/clientset/versioned/scheme",
   ]
   pruneopts = "NUT"
-  revision = "8b8186794dfcc9d7cd1606330f5b5699374d96f7"
+  revision = "61c3e7c0a3f1587a1f2191c4695fa1819fbfe80e"
 
 [[projects]]
   branch = "master"
@@ -43,6 +42,38 @@
   pruneopts = "NUT"
   revision = "7536572e8d55209135cd5e7ccf7fce43dca217ab"
   version = "v0.1.0"
+
+[[projects]]
+  digest = "1:a70813bb61e2a37c8c7e92bb6c89530e25f6f24e1141fa34f26bf6f6bf8b6539"
+  name = "github.com/gobuffalo/envy"
+  packages = ["."]
+  pruneopts = "NUT"
+  revision = "f3b98d4da2fa434517f47f615e217fa72ff2c51e"
+  version = "v1.6.12"
+
+[[projects]]
+  branch = "master"
+  digest = "1:1bd962822ed7c015863e795590291d54a9afe18b4c3892d7cc1af6b56592271f"
+  name = "github.com/gobuffalo/packd"
+  packages = ["."]
+  pruneopts = "NUT"
+  revision = "eca3b8fd66872a76119b189bbe0f58f776a2a39f"
+
+[[projects]]
+  digest = "1:62719e1ae9a8c8589074f3023b013e1f3b906e1207ecf3534022ab6a5f93d088"
+  name = "github.com/gobuffalo/packr"
+  packages = ["."]
+  pruneopts = "NUT"
+  revision = "679459352e18b4c74274a979d695fe13b68730c1"
+  version = "v1.21.9"
+
+[[projects]]
+  branch = "master"
+  digest = "1:cc66a6ea07a8c9a8b95da5b0a78b90cd33cdbe3198ff9698f5b388876eee5464"
+  name = "github.com/gobuffalo/syncx"
+  packages = ["."]
+  pruneopts = "NUT"
+  revision = "558ac7de985fc4f4057bff27c7bdf99e92fe0750"
 
 [[projects]]
   digest = "1:abea725bcf0210887f5da19d804fffa1dd45a42a56bdf5f02322345e3fee4f0d"
@@ -144,12 +175,36 @@
   version = "v0.3.6"
 
 [[projects]]
+  digest = "1:406338ad39ab2e37b7f4452906442a3dbf0eb3379dd1f06aafb5c07e769a5fbb"
+  name = "github.com/inconshreveable/mousetrap"
+  packages = ["."]
+  pruneopts = "NUT"
+  revision = "76626ae9c91c4f2a10f34cad8ce83ea42c93bb75"
+  version = "v1.0"
+
+[[projects]]
+  digest = "1:da62aa6632d04e080b8a8b85a59ed9ed1550842a0099a55f3ae3a20d02a3745a"
+  name = "github.com/joho/godotenv"
+  packages = ["."]
+  pruneopts = "NUT"
+  revision = "23d116af351c84513e1946b527c88823e476be13"
+  version = "v1.3.0"
+
+[[projects]]
   digest = "1:8e36686e8b139f8fe240c1d5cf3a145bc675c22ff8e707857cdd3ae17b00d728"
   name = "github.com/json-iterator/go"
   packages = ["."]
   pruneopts = "NUT"
   revision = "1624edc4454b8682399def8740d46db5e4362ba4"
   version = "v1.1.5"
+
+[[projects]]
+  branch = "master"
+  digest = "1:04ceda71def965b54370f9089593723a00f72db5062d377b9d5a11114c41ad1f"
+  name = "github.com/markbates/oncer"
+  packages = ["."]
+  pruneopts = "NUT"
+  revision = "bf2de49a0be218916e69a11d22866e6cd0a560f2"
 
 [[projects]]
   branch = "master"
@@ -256,6 +311,14 @@
   version = "v2.0.1"
 
 [[projects]]
+  digest = "1:14715f705ff5dfe0ffd6571d7d201dd8e921030f8070321a79380d8ca4ec1a24"
+  name = "github.com/pkg/errors"
+  packages = ["."]
+  pruneopts = "NUT"
+  revision = "ba968bfe8b2f7e042a574c888954fccecfa385b4"
+  version = "v0.8.1"
+
+[[projects]]
   digest = "1:7c7cfeecd2b7147bcfec48a4bf622b4879e26aec145a9e373ce51d0c23b16f6b"
   name = "github.com/prometheus/client_golang"
   packages = [
@@ -299,6 +362,26 @@
   ]
   pruneopts = "NUT"
   revision = "bf6a532e95b1f7a62adf0ab5050a5bb2237ad2f4"
+
+[[projects]]
+  digest = "1:e09ada96a5a41deda4748b1659cc8953961799e798aea557257b56baee4ecaf3"
+  name = "github.com/rogpeppe/go-internal"
+  packages = [
+    "modfile",
+    "module",
+    "semver",
+  ]
+  pruneopts = "NUT"
+  revision = "68d1cb014f030acd0f10ac553801e43c0e5da629"
+  version = "v1.1.0"
+
+[[projects]]
+  digest = "1:343d44e06621142ab09ae0c76c1799104cdfddd3ffb445d78b1adf8dc3ffaf3d"
+  name = "github.com/spf13/cobra"
+  packages = ["."]
+  pruneopts = "NUT"
+  revision = "ef82de70bb3f60c65fb8eebacbb2d122ef517385"
+  version = "v0.0.3"
 
 [[projects]]
   digest = "1:9d8420bbf131d1618bde6530af37c3799340d3762cc47210c1d9532a4c3a2779"
@@ -696,10 +779,12 @@
   analyzer-version = 1
   input-imports = [
     "github.com/gardener/gardener/pkg/apis/extensions/v1alpha1",
-    "github.com/gardener/gardener/pkg/client/extensions/clientset/versioned/scheme",
     "github.com/go-logr/logr",
+    "github.com/gobuffalo/packr",
     "github.com/onsi/ginkgo",
     "github.com/onsi/gomega",
+    "github.com/spf13/cobra",
+    "github.com/spf13/pflag",
     "gopkg.in/yaml.v2",
     "k8s.io/api/core/v1",
     "k8s.io/apimachinery/pkg/api/errors",
@@ -709,6 +794,7 @@
     "k8s.io/apimachinery/pkg/util/runtime",
     "k8s.io/apimachinery/pkg/util/sets",
     "k8s.io/client-go/kubernetes/scheme",
+    "k8s.io/client-go/rest",
     "sigs.k8s.io/controller-runtime/pkg/client",
     "sigs.k8s.io/controller-runtime/pkg/client/config",
     "sigs.k8s.io/controller-runtime/pkg/controller",
