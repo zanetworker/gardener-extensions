@@ -29,7 +29,7 @@ var _ = Describe("#TemplateBashGenerator", func() {
 	var ExpectedCloudInit []byte
 
 	BeforeSuite(func() {
-		box := packr.NewBox("./testfiles")
+		box := packr.NewBox("./testdata")
 		var err error
 
 		ExpectedCloudInit, err = box.Find("cloud-init.sh")

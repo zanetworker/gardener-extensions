@@ -18,7 +18,6 @@ import (
 	"bytes"
 	"encoding/base64"
 	"fmt"
-	"github.com/gobuffalo/packr"
 	"k8s.io/apimachinery/pkg/util/runtime"
 	"path"
 	"text/template"
@@ -29,13 +28,13 @@ var cloudInitTemplate *template.Template
 // DefaultUnitsPath is the default CoreOS path where to store units at.
 const DefaultUnitsPath = "/etc/systemd/system"
 
+// CloudInitTemplate is the string content of templates/cloud-init.sh.template.
+// This expected to be set by the toolchain.
+// CloudInitTemplate string
+
 func init() {
-	box := packr.NewBox("./templates")
-
-	cloudInitTemplateString, err := box.FindString("cloud-init.sh.template")
-	runtime.Must(err)
-
-	cloudInitTemplate, err = template.New("cloud-init.sh").Parse(cloudInitTemplateString)
+	var err error
+	cloudInitTemplate, err = template.New("cloud-init.sh").Parse(CloudInitTemplate)
 	runtime.Must(err)
 }
 

@@ -1,0 +1,7 @@
+# Include version info
+build --workspace_status_command hack/print-workspace-status.sh
+
+# Show us information about failures on stdout and not in a log file
+test --test_output=errors
+build --verbose_failures
+

@@ -15,4 +15,4 @@
 package version
 
 // Version is a string that is overwritten during build time using ld flags.
-var Version string = "binary not built correctly"
+var Version = "binary not built correctly"
