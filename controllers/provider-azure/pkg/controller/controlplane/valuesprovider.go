@@ -100,7 +100,7 @@ var configChart = &chart.Chart{
 		},
 		{
 			Type: &corev1.ConfigMap{},
-			Name: azure.CloudProviderWorkerConfigName,
+			Name: azure.CloudProviderKubeletConfigName,
 		},
 	},
 }

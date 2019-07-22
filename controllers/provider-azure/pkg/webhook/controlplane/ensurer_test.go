@@ -301,9 +301,9 @@ var _ = Describe("Ensurer", func() {
 
 	Describe("#EnsureKubeletCloudProviderConfig", func() {
 		var (
-			cmKey = client.ObjectKey{Namespace: namespace, Name: azure.CloudProviderWorkerConfigName}
+			cmKey = client.ObjectKey{Namespace: namespace, Name: azure.CloudProviderKubeletConfigName}
 			cm    = &corev1.ConfigMap{
-				ObjectMeta: metav1.ObjectMeta{Namespace: namespace, Name: azure.CloudProviderWorkerConfigName},
+				ObjectMeta: metav1.ObjectMeta{Namespace: namespace, Name: azure.CloudProviderKubeletConfigName},
 				Data:       map[string]string{"abc": "xyz", azure.CloudProviderConfigMapKey: cloudProviderConfigContent},
 			}
 
