@@ -15,8 +15,11 @@
 package controlplane
 
 import (
+	extensionsv1alpha1 "github.com/gardener/gardener/pkg/apis/extensions/v1alpha1"
 	"sigs.k8s.io/controller-runtime/pkg/event"
 	"sigs.k8s.io/controller-runtime/pkg/predicate"
+
+	extensionspredicate "github.com/gardener/gardener-extensions/pkg/predicate"
 )
 
 // GenerationChangedPredicate is a predicate for generation changes.
@@ -26,4 +29,25 @@ func GenerationChangedPredicate() predicate.Predicate {
 			return event.MetaOld.GetGeneration() != event.MetaNew.GetGeneration()
 		},
 	}
+}
+
+// HasPurpose filters the incoming Controlplanes  for the given spec.purpose
+func HasPurpose(purpose extensionsv1alpha1.Purpose) predicate.Predicate {
+	return extensionspredicate.FromMapper(extensionspredicate.MapperFunc(func(e event.GenericEvent) bool {
+		controlPlane, ok := e.Object.(*extensionsv1alpha1.ControlPlane)
+		if !ok {
+			return false
+		}
+
+		// needed because ControlPlane of type "normal" has the spec.purpose field not set
+		if controlPlane.Spec.Purpose == nil && purpose == extensionsv1alpha1.Normal {
+			return true
+		}
+
+		if controlPlane.Spec.Purpose == nil {
+			return false
+		}
+
+		return *controlPlane.Spec.Purpose == purpose
+	}), extensionspredicate.CreateTrigger, extensionspredicate.UpdateNewTrigger, extensionspredicate.DeleteTrigger, extensionspredicate.GenericTrigger)
 }

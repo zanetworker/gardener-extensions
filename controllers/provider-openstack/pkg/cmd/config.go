@@ -19,6 +19,7 @@ import (
 
 	"github.com/gardener/gardener-extensions/controllers/provider-openstack/pkg/apis/config"
 	configloader "github.com/gardener/gardener-extensions/controllers/provider-openstack/pkg/apis/config/loader"
+	extensionhealthcheck "github.com/gardener/gardener-extensions/pkg/controller/healthcheck/config"
 
 	"github.com/spf13/pflag"
 )
@@ -90,4 +91,11 @@ func (c *Config) Options() config.ControllerConfiguration {
 	var cfg config.ControllerConfiguration
 	c.Apply(&cfg)
 	return cfg
+}
+
+// ApplyHealthCheckConfig applies the HealthCheckConfig to the config
+func (c *Config) ApplyHealthCheckConfig(config *extensionhealthcheck.HealthCheckConfig) {
+	if c.Config.HealthCheckConfig != nil {
+		*config = *c.Config.HealthCheckConfig
+	}
 }

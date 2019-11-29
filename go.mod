@@ -13,8 +13,8 @@ require (
 	github.com/aliyun/aliyun-oss-go-sdk v2.0.1+incompatible
 	github.com/aws/aws-sdk-go v1.21.10
 	github.com/coreos/go-systemd v0.0.0-20190719114852-fd7a80b32e1f
-	github.com/gardener/gardener v0.0.0-20191127162005-7672763b3716
-	github.com/gardener/gardener-resource-manager v0.0.0-20191025075317-09173887c1a7
+	github.com/gardener/gardener v0.32.1-0.20191129154351-c950119255f0
+	github.com/gardener/gardener-resource-manager v0.8.0
 	github.com/gardener/machine-controller-manager v0.0.0-20191118095523-e30355bc7945
 	github.com/go-logr/logr v0.1.0
 	github.com/go-logr/zapr v0.1.1

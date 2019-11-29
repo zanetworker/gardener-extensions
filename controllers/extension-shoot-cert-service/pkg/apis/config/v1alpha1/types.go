@@ -15,6 +15,7 @@
 package v1alpha1
 
 import (
+	extensionhealthcheckv1alpha1 "github.com/gardener/gardener-extensions/pkg/controller/healthcheck/config/v1alpha1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -27,6 +28,9 @@ type Configuration struct {
 
 	IssuerName string `json:"issuerName"`
 	ACME       ACME   `json:"acme"`
+	// HealthCheckConfig
+	// +optional
+	HealthCheckConfig *extensionhealthcheckv1alpha1.HealthCheckConfig `json:"healthCheckConfig"`
 }
 
 // ACME holds information about the ACME issuer used for the certificate service.

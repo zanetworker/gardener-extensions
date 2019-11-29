@@ -15,6 +15,7 @@
 package config
 
 import (
+	extensionhealthcheck "github.com/gardener/gardener-extensions/pkg/controller/healthcheck/config"
 	"k8s.io/apimachinery/pkg/api/resource"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	componentbaseconfig "k8s.io/component-base/config"
@@ -34,6 +35,8 @@ type ControllerConfiguration struct {
 	MachineImages []MachineImage
 	// ETCD is the etcd configuration.
 	ETCD ETCD
+	// HealthCheckConfig
+	HealthCheckConfig *extensionhealthcheck.HealthCheckConfig
 }
 
 // MachineImage is a mapping from logical names and versions to Packet-specific identifiers.

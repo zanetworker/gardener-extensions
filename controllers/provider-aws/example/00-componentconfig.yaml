@@ -28,3 +28,5 @@ etcd:
     capacity: 80Gi
 #  backup:
 #    schedule: "0 */24 * * *"
+#healthCheckConfig:
+#  syncPeriod: 30s
